@@ -69,13 +69,14 @@ public class WRM {
 
         dh.next = pointer;
 
-        while (pointer != dh) {
+        while (true) {
             Patient temp = pointer.next;
             pointer.next = pointer.prev;
             pointer.prev = temp;
 
             if (pointer.next == dh) {
                 dh.prev = pointer;
+                break;
             }
             pointer = pointer.next;
         }
